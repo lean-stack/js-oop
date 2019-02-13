@@ -31,7 +31,8 @@ Das allgemeine Format:
       configurable: false // Änderbarkeit der Definition (default: false) - immer möglich: writable von true nach false
     };
 
-    // Beispiel:
+Beispiele:
+
     Object.defineProperty(k1, 'nr', {
       value: 1001,
       enumerable: true,
