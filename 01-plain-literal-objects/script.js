@@ -8,7 +8,7 @@
  * - Eine Property ist ein Key-Value Paar; der Key enthälten den Property-Namen
  * - Eine Methode ist eine Property, deren Value eine Funktion ist.
  * 
- * Bei den Methoden ist evaluiert this auf die Objekt-Instanz
+ * Bei den Methoden evaluiert this auf die Objekt-Instanz
  */
 
  // Objekte können einfach literal angelegt werden
