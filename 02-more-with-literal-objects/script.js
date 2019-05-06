@@ -1,6 +1,6 @@
 /**
  * Step 02: More with Plain Objects
- * 
+ *
  * Neben der literalen Definition sind andere Formen der
  * Objekterzeugung möglich.
  */
@@ -23,39 +23,39 @@ const k2 = new Object();
 // Property-Definitions hinzufügen.
 // Das allgemeine Format:
 const propDefinition = {
-    value: 1001,      // oder function ... für eine Methode (default: undefined)
-    enumerable: true, // Iterable in for-in-loop bzw. sichtbar bei JSON.stringify (default: false),
-    writable: true,    // beschreibbar (default: false)
-    get: undefined,   // getter-Funktion (default: undefined), nicht kombinierbar mir value
-    set: undefined,   // setter-Funktion (default: undefined), nicht kombinierbar mir value
-    configurable: false // Änderbarkeit der Definition (default: false) - immer möglich: writable von true nach false
+  value: 1001,      // oder function ... für eine Methode (default: undefined)
+  enumerable: true, // Iterable in for-in-loop bzw. sichtbar bei JSON.stringify (default: false),
+  writable: true,    // beschreibbar (default: false)
+  get: undefined,   // getter-Funktion (default: undefined), nicht kombinierbar mir value
+  set: undefined,   // setter-Funktion (default: undefined), nicht kombinierbar mir value
+  configurable: false // Änderbarkeit der Definition (default: false) - immer möglich: writable von true nach false
 };
 
 // Beispiel:
 Object.defineProperty(k1, 'nr', {
-    value: 1001,
-    enumerable: true,
-    writable: true
+  value: 1001,
+  enumerable: true,
+  writable: true
 });
 
 k1.nr = 2000;
 console.log(k1.nr);
 
 Object.defineProperty(k1, 'nr', {
-    writable: false
+  writable: false
 });
 k1.nr = 1234;
 console.log(k1.nr);
 
 Object.defineProperty(k1, '_stand', {
-    value: 0,
-    writable: true
+  value: 0,
+  writable: true
 });
 Object.defineProperty(k1, 'stand', {
-    get() { return this._stand; }
+  get() { return this._stand; }
 });
 Object.defineProperty(k1, 'einzahlen', {
-    value: function(betrag) { this._stand += betrag; }
+  value: function (betrag) { this._stand += betrag; }
 });
 
 console.log(k1.stand);
@@ -64,10 +64,10 @@ console.log(k1.stand);
 
 // Über die Object-Factory lässt sich das auch in einem Rutsch erledigen
 const k3 = Object.create({}, {
-    nr:        { value: 1002, enumerable: true },
-    _stand:    { value: 0, writable: true },
-    stand:     { get() { return this._stand; }, enumerable: true },
-    einzahlen: { value: function(betrag) { this._stand += betrag; } }
+  nr: { value: 1002, enumerable: true },
+  _stand: { value: 0, writable: true },
+  stand: { get() { return this._stand; }, enumerable: true },
+  einzahlen: { value: function (betrag) { this._stand += betrag; } }
 });
 
 // Achtung: letztes Objekt k3 ist ziemlich "übermodelliert",
