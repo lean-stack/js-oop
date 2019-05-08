@@ -21,16 +21,7 @@ const k1 = {
   auszahlen: function (betrag) { this.stand -= betrag; }
 };
 
-// Mit EcmaScript 5.1 wurde eine elegantere Methoden-Definition eingeführt
-
-const k2 = {
-  nr: 1002,
-  stand: 0,
-  einzahlen(betrag) { this.stand += betrag; },
-  auszahlen(betrag) { this.stand -= betrag; }
-};
-
-// Auf Grund des Key-Typs ist auch folgendes möglich:
+// Achtung: Auf Grund des Key-Typs ist auch folgendes möglich:
 
 const spezial = {
   'nr': 1003,
